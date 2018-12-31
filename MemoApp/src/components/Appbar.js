@@ -1,12 +1,12 @@
 import React from 'react';
-import {StyleSheet ,View, Text} from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 class Appbar extends React.Component{
     render(){
-        return(
+        return (
             <View style={styles.appbar}>
                 <View>
-                    <Text style = {styles.appbarTitle}>MEMOT</Text>
+                    <Text style={styles.appbarTitle}>MEMOT</Text>
                 </View>
             </View>
         );
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         shadowColor: '#000',
-        shadowOffset: {width:0, height:0},
+        shadowOffset: { width:0, height:0 },
         shadowOpacity: 0.5,
         shadowRadius:3,
         zIndex:10,
@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
       appbarTitle:{
         color: '#fff',
         fontSize:18,
-      }
+      },
 
-})
+});
 
 export default Appbar;

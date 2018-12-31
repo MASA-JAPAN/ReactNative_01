@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet ,View, Text} from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 class MemoList extends React.Component{
     render(){
-        return(
+        return (
             <View style={styles.memoList}>
                 <View style={styles.memoListItem}>
                     <Text style={styles.memoTitle}>講座のアイテム</Text>
@@ -40,16 +40,14 @@ const styles = StyleSheet.create({
         borderBottomWidth:1,
         borderBottomColor:'#ddd',
         backgroundColor: '#fff',
-    
       },
       memoTitle:{
         fontSize:18,
         marginBottom:4,
       },
-    
       memoDate:{
         fontSize: 12,
-        color: '#a2a2a2'
+        color: '#a2a2a2',
       },
 });
 
