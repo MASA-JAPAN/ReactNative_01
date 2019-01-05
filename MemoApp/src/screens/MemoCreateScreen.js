@@ -10,11 +10,11 @@ class MemoCreateScreen extends React.Component{
     }
 
     handlePress(){
-        const { params } = this.props.navigation.state;
         const db = firebase.firestore();
+        const { currentUser } = firebase.auth();
 
         db.settings({ timestampsInSnapshots: true });
-        db.collection(`users/${params.currentUser.user.uid}/memos`).add({
+        db.collection(`users/${currentUser.uid}/memos`).add({
             body:this.state.body,
             created_on: new Date(),
         })
@@ -35,7 +35,7 @@ class MemoCreateScreen extends React.Component{
                     value={this.state.body}
                     onChangeText={(text) => { this.setState({ body:text }); }}
                 />
-                <CircleButton name="check" onPress={this.handlePress.bind(this)} />
+                <CircleButton name="check" onPress={this.handlePress.bind(this)} style={styles.checkButton} />
             </View>
         );
     }
@@ -54,6 +54,9 @@ const styles = StyleSheet.create({
         paddingRight: 16,
         paddingBottom: 16,
 
+    },
+    checkButton:{
+        top: 75,
     },
 
 });
