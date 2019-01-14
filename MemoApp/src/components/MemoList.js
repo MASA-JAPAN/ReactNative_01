@@ -3,8 +3,9 @@ import { StyleSheet, View, Text, TouchableHighlight, FlatList } from 'react-nati
 
 
 const dateString = (date) => {
-    const str = date.toDate().toISOString();
-    return str.split('T')[0];
+    if (date == null){ return ''; }
+    const dateObject = date.toDate();
+    return dateObject.toISOString().split('T')[0];
 };
 
 
